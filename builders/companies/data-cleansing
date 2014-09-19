@@ -1,0 +1,5 @@
+data cleanser for companies.X.loader
+
+* Remove everything after "image": sed -i.bak 's/\,\ \"image\"\(.*\)\"partners\"\ \:\ \[\(.*\)\]//g' companies.eloader
+* Clean the html in the file: sed -i.bak -e 's/<p>//g' -e 's/<\/p>//g' companies.eloader
+* Create a cool timestamp: sed -i.bak 's/\"founded_year\"\ \:\ \(.*\)\,\ \"founded_month\"\ \:\ \(.*\)\,\ \"founded_day\"\ \:\ \(.*\)\,/\"founded\"\ \:\ \"\1-\2-\3\"\ \,/g' companies.eloader
